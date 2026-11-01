@@ -10,8 +10,12 @@ test('adding a task shows it in the list', async ({ page }) => {
 
 test('the admin dashboard reflects generated traffic', async ({ page }) => {
   await page.goto('/admin');
+  // The snapshot document outlives the server process, so the first one shown can be
+  // stale. Wait for a refresh by the running server before reading the baseline.
+  const meta = page.locator('.meta');
+  const initialMeta = await meta.textContent();
+  await expect(meta).not.toHaveText(initialMeta, { timeout: 15000 });
   const calls = page.locator('[data-tile="calls"]');
-  await expect(calls).toBeVisible({ timeout: 15000 });
   const before = Number(await calls.textContent());
 
   await page.getByRole('button', { name: 'Generate sample traffic' }).click();
