@@ -95,8 +95,8 @@ Each example doubles as a reference for [community packages](https://docs.meteor
 - Repository: [meteor/examples/instrumentation-dashboard](./instrumentation-dashboard)
 - Why: Admin dashboard built on Meteor's instrumentation package: method calls, latency percentiles, errors and DDP connections, with bounded storage that works across several server instances
 - Stack: Meteor, Rspack, Blaze 3, Chart.js, MongoDB, Mocha, RSLint, Playwright
-- Last Updated At: Oct/19/2026
-- Meteor Version: 3.6-rc.0
+- Last Updated At: Nov/01/2026
+- Meteor Version: 3.6-rc.1
 
 ## Other examples
 

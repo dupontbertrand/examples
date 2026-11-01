@@ -8,7 +8,7 @@ The point is the pattern, not the charts: observing an app without slowing its m
 
 | | |
 |---|---|
-| Runtime | Meteor 3.6-rc.0 |
+| Runtime | Meteor 3.6-rc.1 |
 | Observability | `instrumentation` (Meteor core) |
 | Frontend | Blaze 3 |
 | Chart | Chart.js 4 |
@@ -106,7 +106,6 @@ e2e/                    # Playwright specs
 - Events still in the queue when the process stops are lost.
 - The subscription count per instance is approximate: it counts publication starts minus stops and errors.
 - The trace and span ids are the package's own ids, not OpenTelemetry ids.
-- On Meteor 3.6-rc.0, `.meteor/packages` pins `ddp-server@=3.4.1-rc360.0`. Without it, the app resolves the `ddp-server` from Meteor 3.5.3, which emits no instrumentation events ([meteor/meteor#14849](https://github.com/meteor/meteor/issues/14849)). The pin goes away with the next release.
 
 ## Deployment
 
